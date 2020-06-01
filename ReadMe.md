@@ -7,13 +7,22 @@ These instructions will get you a copy of the demo up and running on your local 
 ## Requirements
 
 * java: 8(+)
+
 * mongodb: 5(*)
+
 * Node
+
 * npm
+
 * maven: 3(+)
+
 * gradle: 11(+)
+
 * actus-core 1.0 (+)
 
+  
+
+If you need additional help installing these requirements, you find a step by instruction at the bottom of the page.
 
 ## Build the actus-core library
 
@@ -116,3 +125,38 @@ npm start
 
 Now, open your browser and the app through url <a href="http://localhost:3000">http://localhost:3000</a>.
 
+## Installing requirements: Step by step
+
+### Install Java
+
+#### On Linux:
+```sh
+sudo apt update
+sudo apt install default-jre
+sudo apt install default-jdk
+```
+Additionally, add the JAVA_HOME path variable to /etc/environment.
+
+#### On Mac:
+* Download the Java SE Development Kit: https://www.oracle.com/java/technologies/javase-jdk14-downloads.html
+* Double click the downloaded file and follow the instructions
+
+### Install mongodb
+
+#### On Linux:
+```sh
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+```
+
+### Install maven
+
+#### On Linux:
+
+#### On Mac:
+* Go to page: https://maven.apache.org/download.cgi
+
+* Download Binary tar.gz archive
+
+* Extract it: 
+
+   tar -xzf apache-maven-3.6.3
