@@ -167,11 +167,11 @@ brew tap mongodb/brew
 brew install mongodb-community@4.2
 brew services start mongodb-community@4.2
 ```
-
-### Install npm
+### Install node and npm
 
 #### On Linux:
 ```sh
+sudo apt install nodejs
 sudo apt install npm
 ```
 #### On Mac:
