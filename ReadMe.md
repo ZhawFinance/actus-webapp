@@ -125,7 +125,14 @@ npm start
 
 Now, open your browser and the app through url <a href="http://localhost:3000">http://localhost:3000</a>.
 
+
+
+
+
 ## Installing requirements: Step by step
+
+Note: The version of software referred to in the following may be outdated at the time you 
+read this.
 
 ### Install Java
 
@@ -146,17 +153,64 @@ Additionally, add the JAVA_HOME path variable to /etc/environment.
 #### On Linux:
 ```sh
 wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+sudo systemctl enable mongod
+```
+#### On Mac:
+```sh
+brew tap mongodb/brew
+brew install mongodb-community@4.2
+brew services start mongodb-community@4.2
+```
+
+### Install npm
+
+#### On Linux:
+```sh
+sudo apt install npm
+```
+#### On Mac:
+```sh
+brew install node
 ```
 
 ### Install maven
 
 #### On Linux:
-
+```sh
+wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+tar -xvf apache-maven-3.6.3-bin.tar.gz
+export PATH=/srv/data/opt/apache-maven-3.6.3/bin:$PATH
+```
 #### On Mac:
 * Go to page: https://maven.apache.org/download.cgi
-
 * Download Binary tar.gz archive
-
 * Extract it: 
-
+```sh
    tar -xzf apache-maven-3.6.3
+```
+*  Move file to directory /opt/ :
+```sh
+mv apache-maven-3.6.3 /opt/apache-maven
+```
+* Export path:
+```sh
+echo "export PATH=$PATH:/opt/apache-maven/bin">> .profile
+```
+### Install gradle
+
+#### On Linux:
+```sh
+wget https://services.gradle.org/distributions/gradle-6.2-bin.zip
+unzip gradle-6.2-bin.zip
+export PATH=$PATH:/srv/data/opt/gradle/gradle-6.2/bin/
+```
+#### On Mac
+```sh
+brew install gradle
+```
